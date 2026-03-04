@@ -23,6 +23,36 @@ Simplified sidebar:
 - Home, Watch, Shows, Music, Clips, Artists, Event
 - Pages dropdown (Blog, Contact, FAQ, Privacy, Pricing)
 
+## Pricing Page Update ✅
+Restructured `/pricing` with three cards:
+
+**1. Artist Starter** — $0/month
+- Artist profile page
+- Upload 1 mixtape or project
+- Track preview for listeners
+- Appear in artist discovery
+- Basic analytics
+
+**2. Artist Pro** — $15/month ($13 yearly)
+- Unlimited track uploads
+- Unlimited mixtapes
+- Full song streaming
+- Downloadable music for members
+- Featured in discovery sections
+- Artist analytics dashboard
+
+**3. Sponsor Partner** — Dynamic pricing with tier toggle
+- Defaults to **Product Partner ($250)**
+- Radio toggle for tier selection:
+  - Product Partner — $250
+  - Segment Partner — $400
+  - Title Partner — $1,000
+- Includes logo placement, shoutouts, brand placement, social mentions, giveaway opportunities
+- Price updates dynamically based on selected tier
+- Yearly discount (10%) applies to all tiers
+
+Stats row unchanged: 50K+ listeners, 200+ episodes, 25K+ social following, 45 min avg episode length
+
 ## TypeScript Fixes (pre-existing theme issues)
 | File | Change |
 |------|--------|

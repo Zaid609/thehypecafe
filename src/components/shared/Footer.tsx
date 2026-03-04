@@ -85,20 +85,19 @@ const Footer = () => {
             <div className="col-lg-4 col-md-6 col-sm-6 footer__streamio">
               <div className="footer__widget text-center">
                 <p className="pra  bodyfont fs-16 mb-60">
-                  Databest - powerful Podcasts expert on processing marketing
-                  data
+                  The Hype Cave is a culture-driven platform connecting podcasts, artists, and brands.
                 </p>
                 <Link href="/" className="d-block mb-60">
                   <Image
-                    width={68}
-                    height={51}
+                    width={136}
+                    height={102}
                     src="/img/logo/favicon-small.png"
                     alt="img"
                   />
                   <h3 className="white">The Hype Cave</h3>
                 </Link>
                 <p className="pra level__message bodyfont fs-16">
-                  Level up your cases with tons of data
+                  Where culture lives.
                 </p>
               </div>
             </div>
@@ -109,27 +108,27 @@ const Footer = () => {
                   <ul className="link">
                     <li className="mb-16">
                       <Link
-                        href="tel:+3567897483"
+                        href="mailto:contact@thehypecave.com"
                         className="fs-16 fw-400 bodyfont pra"
                       >
-                        UA: +3 567 897 483
+                        contact@thehypecave.com
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="fs-16 fw-400 bodyfont pra">
-                        ronyui3630.com
+                      <Link href="https://thehypecave.com" className="fs-16 fw-400 bodyfont pra">
+                        thehypecave.com
                       </Link>
                     </li>
                   </ul>
                   <ul className="link">
                     <li className="mb-16">
-                      <Link href="#" className="fs-16 fw-400 bodyfont pra">
-                        www.Pixelaxic.com
+                      <Link href="contact" className="fs-16 fw-400 bodyfont pra">
+                        Sponsor Inquiries
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="fs-16 fw-400 bodyfont pra">
-                        Ukraine, Odessa
+                      <Link href="contact" className="fs-16 fw-400 bodyfont pra">
+                        Artist Submissions
                       </Link>
                     </li>
                   </ul>
