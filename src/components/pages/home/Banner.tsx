@@ -1,4 +1,5 @@
 "use client";
+import HeroBackgroundVideo from "@/components/hero/HeroBackgroundVideo";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +14,8 @@ const Banner = () => {
 
   return (
     // <!--banner section-->
-    <section className="banner__v1 banner__space mr-24 ml-24">
+    <HeroBackgroundVideo>
+      <section className="banner__v1 banner__space mr-24 ml-24 banner--video-mode">
       <div className="container-fluid p-0">
         <div className="row g-4">
           <div className="col-lg-7">
@@ -173,6 +175,7 @@ const Banner = () => {
         </div>
       </div>
     </section>
+    </HeroBackgroundVideo>
     //<!--banner section-->
   );
 };

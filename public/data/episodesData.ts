@@ -4,6 +4,8 @@ export interface Episode {
   guest: string;
   episodeNumber: number;
   thumbnail: string;
+  featuredImage: string;
+  thumbImage: string;
   youtubeUrl: string;
   duration: string;
   views: number;
@@ -18,6 +20,8 @@ export const episodesData: Episode[] = [
     guest: "Chris White",
     episodeNumber: 2,
     thumbnail: "/images/episodes/episode-2.jpg",
+    featuredImage: "/images/episodes/ep2_featured_528x400.jpg",
+    thumbImage: "/images/episodes/ep2_thumb_135x135.jpg",
     youtubeUrl: "https://www.youtube.com/watch?v=GpDikUh3Bbg",
     duration: "30:09",
     views: 148,
@@ -31,6 +35,8 @@ export const episodesData: Episode[] = [
     guest: "Frankie Krutches",
     episodeNumber: 1,
     thumbnail: "/images/episodes/episode-1.jpg",
+    featuredImage: "/images/episodes/ep1_featured_528x400.jpg",
+    thumbImage: "/images/episodes/ep1_thumb_135x135.jpg",
     youtubeUrl: "https://www.youtube.com/watch?v=PGo11BLDHMU",
     duration: "29:08",
     views: 253,

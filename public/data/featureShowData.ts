@@ -1,9 +1,9 @@
-import image2 from "@/../public/img/feature/featured-big2.jpg";
 import image3 from "@/../public/img/feature/featured-new1.jpg";
 import image4 from "@/../public/img/feature/featured-new2.jpg";
 import image5 from "@/../public/img/feature/featured-new3.jpg";
 import image6 from "@/../public/img/feature/featured-new4.jpg";
-import episode1 from "@/../public/images/episodes/episode-1.jpg";
+import episode1 from "@/../public/images/episodes/ep1_featured_528x400.jpg";
+import episode2 from "@/../public/images/episodes/ep2_featured_528x400.jpg";
 import { v4 as uuidv4 } from "uuid";
 export const featureShowData = [
   {
@@ -17,12 +17,12 @@ export const featureShowData = [
   },
   {
     id: uuidv4(),
-    image: image2,
-    date: "April 07,2023",
-    totalEpisodes: 25,
-    title: "Tube Preamps, TLM103 vs OJ 818, Podcastage’s Beanies",
+    image: episode2,
+    date: "March 2026",
+    totalEpisodes: 2,
+    title: "EP #2: Chris White talks CZW Wrestling, Hulk Hogan & Top 5 Wrestlers",
     description:
-      "Music has a way of touching our souls and evoking that words alone cannot express.",
+      "Chris White joins The Hype Cave to discuss his passion for professional wrestling, CZW Wrestling, and ranks his top 5 pro wrestlers.",
   },
   {
     id: uuidv4(),

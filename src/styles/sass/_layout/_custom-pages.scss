@@ -509,3 +509,122 @@
     background: rgba(76, 175, 80, 0.1);
   }
 }
+
+// Spotlight Section
+.spotlight__section {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+}
+
+.spotlight__card {
+  background: #1e1e1e;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.spotlight__card-image {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.spotlight__card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 196, 205, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  &--artist {
+    background: rgba(148, 87, 235, 0.9);
+  }
+
+  &--track {
+    background: rgba(76, 175, 80, 0.9);
+  }
+}
+
+.spotlight__card-content {
+  padding: 20px;
+}
+
+// Hero Background Video
+.hero-video-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+  
+  @media (max-width: 991px) {
+    min-height: 55vh;
+  }
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-video-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+.hero-video-content {
+  position: relative;
+  z-index: 2;
+}
+
+// Banner adjustments for video mode
+.banner--video-mode {
+  background: transparent !important;
+  
+  .bn__thumb1,
+  .bn__thumb2,
+  .bn__thumb3,
+  .bn__thumb4 {
+    background: transparent !important;
+  }
+}
+

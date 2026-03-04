@@ -1,7 +1,7 @@
 import {
   IconAddressBook,
   IconArrowNarrowRight,
-  IconHeadphones,
+  IconPlayerPlay,
 } from "@tabler/icons-react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
@@ -52,8 +52,8 @@ const FeatureShowLeftCard = ({
                   href="#"
                   className="d-flex align-items-center fs-14 fw-500 white gap-2"
                 >
-                  <IconHeadphones />
-                  Listen Now
+                  <IconPlayerPlay />
+                  Watch Now
                 </Link>
               </li>
               <li>
