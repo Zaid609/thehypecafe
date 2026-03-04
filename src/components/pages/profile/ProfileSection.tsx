@@ -1,6 +1,10 @@
+"use client";
+
 import { exploreSectionData } from "@/../public/data/exploreSectionData";
 import { songUpgradeData } from "@/../public/data/songUpgrdeData";
+import { currentUser, getRoleDisplayName, getRoleBadgeClass } from "@/../public/data/userData";
 import { weeklytopTrackData } from "@/../public/data/weeklyTopTracksData";
+import { getCurrentUser } from "@/utils/auth";
 import {
   IconCamera,
   IconEdit,
@@ -16,6 +20,9 @@ import ExploreSectionTableRow from "../explore/ExploreSectionTableRow";
 import WeeklyTopTrack from "../explore/WeeklyTopTrack";
 
 const ProfileSection = () => {
+  // Use authenticated user if available, fallback to demo
+  const user = getCurrentUser() || currentUser;
+  
   return (
     <section className="profile__section custom__space pr-24 pl-24 pb-80">
       <div className="container">
@@ -44,23 +51,26 @@ const ProfileSection = () => {
                 <Image
                   width={110}
                   height={110}
-                  src="/img/profile/david.jpg"
+                  src={user.avatar}
                   alt="img"
                 />
                 <div className="boxes">
                   <IconPlus />
-                  <input type="file" accept="image/*" />
+                  <input type="file" accept="image/*" aria-label="Upload profile picture" />
                 </div>
               </div>
               <div className="content">
                 <span className="fs-20 fw-500 d-block white bodyfont mb-1">
-                  David Malan
+                  {user.name}
                 </span>
-                <span className="fs-14 fw-500 d-block white mb-3">
-                  duhvr847y439
+                <span className="fs-14 fw-500 d-block white mb-1">
+                  {user.username}
+                </span>
+                <span className={`d-inline-block fs-12 fw-500 bodyfont px-2 py-1 rounded-1 mb-3 ${getRoleBadgeClass(user.role)} text-white`}>
+                  {getRoleDisplayName(user.role)}
                 </span>
                 <Link
-                  href="#0"
+                  href="/profile-edit"
                   className="d-flex fs-14 fw-500 bodyfont base2 align-items-center gap-2"
                 >
                   <IconEdit />
@@ -83,7 +93,7 @@ const ProfileSection = () => {
                   aria-selected="true"
                   aria-label="button"
                 >
-                  Activites
+                  Activity
                 </button>
               </li>
               <li className="nav-item" role="presentation">
@@ -113,7 +123,7 @@ const ProfileSection = () => {
                   aria-selected="false"
                   aria-label="button"
                 >
-                  Albums
+                  Projects
                 </button>
               </li>
               <li className="nav-item" role="presentation">
@@ -143,7 +153,7 @@ const ProfileSection = () => {
                   aria-selected="false"
                   aria-label="tab button"
                 >
-                  Liked
+                  Liked Music
                 </button>
               </li>
               <li className="nav-item" role="presentation">
@@ -235,10 +245,18 @@ const ProfileSection = () => {
                         alt="img"
                       />
                     </div>
-                    <div className="d-flex mb-24 align-items-center justify-content-between">
+                    <div className="d-flex mb-24 align-items-center justify-content-between flex-wrap gap-3">
                       <div className="follow__item">
                         <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
                           Tracks
+                        </span>
+                        <span className="d-block bodyfont white fw-600 fs-24">
+                          0
+                        </span>
+                      </div>
+                      <div className="follow__item">
+                        <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
+                          Downloads
                         </span>
                         <span className="d-block bodyfont white fw-600 fs-24">
                           0
@@ -326,10 +344,18 @@ const ProfileSection = () => {
                         alt="img"
                       />
                     </div>
-                    <div className="d-flex mb-24 align-items-center justify-content-between">
+                    <div className="d-flex mb-24 align-items-center justify-content-between flex-wrap gap-3">
                       <div className="follow__item">
                         <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
                           Tracks
+                        </span>
+                        <span className="d-block bodyfont white fw-600 fs-24">
+                          0
+                        </span>
+                      </div>
+                      <div className="follow__item">
+                        <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
+                          Downloads
                         </span>
                         <span className="d-block bodyfont white fw-600 fs-24">
                           0
@@ -417,10 +443,18 @@ const ProfileSection = () => {
                         alt="img"
                       />
                     </div>
-                    <div className="d-flex mb-24 align-items-center justify-content-between">
+                    <div className="d-flex mb-24 align-items-center justify-content-between flex-wrap gap-3">
                       <div className="follow__item">
                         <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
                           Tracks
+                        </span>
+                        <span className="d-block bodyfont white fw-600 fs-24">
+                          0
+                        </span>
+                      </div>
+                      <div className="follow__item">
+                        <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
+                          Downloads
                         </span>
                         <span className="d-block bodyfont white fw-600 fs-24">
                           0
@@ -496,10 +530,18 @@ const ProfileSection = () => {
                         alt="img"
                       />
                     </div>
-                    <div className="d-flex mb-24 align-items-center justify-content-between">
+                    <div className="d-flex mb-24 align-items-center justify-content-between flex-wrap gap-3">
                       <div className="follow__item">
                         <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
                           Tracks
+                        </span>
+                        <span className="d-block bodyfont white fw-600 fs-24">
+                          0
+                        </span>
+                      </div>
+                      <div className="follow__item">
+                        <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
+                          Downloads
                         </span>
                         <span className="d-block bodyfont white fw-600 fs-24">
                           0
@@ -575,10 +617,18 @@ const ProfileSection = () => {
                         alt="img"
                       />
                     </div>
-                    <div className="d-flex mb-24 align-items-center justify-content-between">
+                    <div className="d-flex mb-24 align-items-center justify-content-between flex-wrap gap-3">
                       <div className="follow__item">
                         <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
                           Tracks
+                        </span>
+                        <span className="d-block bodyfont white fw-600 fs-24">
+                          0
+                        </span>
+                      </div>
+                      <div className="follow__item">
+                        <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
+                          Downloads
                         </span>
                         <span className="d-block bodyfont white fw-600 fs-24">
                           0
@@ -654,10 +704,18 @@ const ProfileSection = () => {
                         alt="img"
                       />
                     </div>
-                    <div className="d-flex mb-24 align-items-center justify-content-between">
+                    <div className="d-flex mb-24 align-items-center justify-content-between flex-wrap gap-3">
                       <div className="follow__item">
                         <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
                           Tracks
+                        </span>
+                        <span className="d-block bodyfont white fw-600 fs-24">
+                          0
+                        </span>
+                      </div>
+                      <div className="follow__item">
+                        <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
+                          Downloads
                         </span>
                         <span className="d-block bodyfont white fw-600 fs-24">
                           0
@@ -733,10 +791,18 @@ const ProfileSection = () => {
                         alt="img"
                       />
                     </div>
-                    <div className="d-flex mb-24 align-items-center justify-content-between">
+                    <div className="d-flex mb-24 align-items-center justify-content-between flex-wrap gap-3">
                       <div className="follow__item">
                         <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
                           Tracks
+                        </span>
+                        <span className="d-block bodyfont white fw-600 fs-24">
+                          0
+                        </span>
+                      </div>
+                      <div className="follow__item">
+                        <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
+                          Downloads
                         </span>
                         <span className="d-block bodyfont white fw-600 fs-24">
                           0
@@ -812,10 +878,18 @@ const ProfileSection = () => {
                         alt="img"
                       />
                     </div>
-                    <div className="d-flex mb-24 align-items-center justify-content-between">
+                    <div className="d-flex mb-24 align-items-center justify-content-between flex-wrap gap-3">
                       <div className="follow__item">
                         <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
                           Tracks
+                        </span>
+                        <span className="d-block bodyfont white fw-600 fs-24">
+                          0
+                        </span>
+                      </div>
+                      <div className="follow__item">
+                        <span className="pra d-block fs-18 fw-500 bodyfont mb-1">
+                          Downloads
                         </span>
                         <span className="d-block bodyfont white fw-600 fs-24">
                           0

@@ -53,6 +53,7 @@ const CartRow = ({
             <input
               name="qty"
               id="qty"
+              aria-label="Quantity"
               onChange={() => setCartItem}
               value={quantity <= 9 ? `0${quantity}` : quantity}
             />

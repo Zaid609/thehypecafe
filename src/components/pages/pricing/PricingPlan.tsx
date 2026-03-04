@@ -22,7 +22,7 @@ const PricingPlan = () => {
         <div className="row g-4 mb-60">
           {[
             { label: "Monthly Listeners", value: "50K+" },
-            { label: "Episodes Released", value: "200+" },
+            { label: "Episodes Released", value: "5+" },
             { label: "Social Following", value: "25K+" },
             { label: "Avg. Episode Length", value: "45 min" },
           ].map((stat, index) => (
@@ -104,7 +104,7 @@ const PricingPlan = () => {
                 </li>
               </ul>
               <Link
-                href="signup"
+                href="/signup?role=artist"
                 className="pricing__btn blackbg d-block base fs-16 fw-500 bodyfont w-100 text-center"
               >
                 Create Artist Profile
@@ -157,7 +157,7 @@ const PricingPlan = () => {
                 </li>
               </ul>
               <Link
-                href="signup"
+                href="/signup?role=artist-pro"
                 className="pricing__btn basebg2 d-block white fs-16 fw-500 bodyfont w-100 text-center"
               >
                 Upgrade to Pro
@@ -168,6 +168,9 @@ const PricingPlan = () => {
           {/* Sponsor Partner */}
           <div className="col-lg-4 col-md-6 col-sm-6">
             <div className="pricing__item">
+              <span className="fs-12 fw-500 pra d-block bodyfont mb-4">
+                Sponsor The Hype Cave Podcast
+              </span>
               <span className="fs-16 fw-500 base3 d-block bodyfont mb-10">
                 {sponsorTiers.find(t => t.id === selectedTier)?.name}
               </span>
@@ -182,8 +185,9 @@ const PricingPlan = () => {
                 </div>
                 <span className="fs-16 month fw-500 bodyfont pra">/month</span>
               </div>
+              <span className="fs-12 pra d-block mt-8">Podcast Sponsorship Placement</span>
               <p className="pra fs-14 mt-16 mb-16">
-                Promote your brand to The Hype Cave audience.
+                Promote your brand to The Hype Cave audience through podcast sponsorship placements.
               </p>
               <ul className="pricing__list mt-24 mb-40">
                 <li className="d-flex gap-2 fs-16 bodyfont fw-400 align-items-center">
@@ -208,7 +212,7 @@ const PricingPlan = () => {
                 </li>
               </ul>
               <div className="mt-24 mb-24">
-                <span className="fs-14 fw-600 white d-block mb-12">Premium Episode Placements</span>
+                <span className="fs-14 fw-600 white d-block mb-12">Choose Your Sponsorship Tier</span>
                 <div className="d-flex flex-column gap-2">
                   {sponsorTiers.map((tier) => (
                     <label
@@ -216,7 +220,6 @@ const PricingPlan = () => {
                       className={`d-flex align-items-center gap-2 fs-14 cursor-pointer ${
                         selectedTier === tier.id ? "base3" : "pra"
                       }`}
-                      style={{ cursor: "pointer" }}
                     >
                       <input
                         type="radio"
@@ -224,7 +227,7 @@ const PricingPlan = () => {
                         value={tier.id}
                         checked={selectedTier === tier.id}
                         onChange={(e) => setSelectedTier(e.target.value)}
-                        style={{ accentColor: "#4CAF50" }}
+                        className="accent-green"
                       />
                       {tier.name} — ${enabled ? tier.yearlyPrice.toLocaleString() : tier.price.toLocaleString()}/mo
                     </label>
@@ -232,7 +235,7 @@ const PricingPlan = () => {
                 </div>
               </div>
               <Link
-                href="contact"
+                href="/signup?role=sponsor"
                 className="pricing__btn blackbg d-block base3 fs-16 fw-500 bodyfont w-100 text-center"
               >
                 Become a Sponsor

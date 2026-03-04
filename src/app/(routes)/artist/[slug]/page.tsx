@@ -16,36 +16,15 @@ const ArtistPage = ({ params }: Props) => {
     <section className="artist__profile__section pt-100 pb-100 pr-24 pl-24">
       <div className="container-fluid p-0">
         {/* Artist Header */}
-        <div
-          className="artist__header mb-60"
-          style={{
-            background: "linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%)",
-            borderRadius: "16px",
-            padding: "40px",
-            display: "flex",
-            alignItems: "flex-end",
-            gap: "30px",
-          }}
-        >
-          <div
-            style={{
-              width: "200px",
-              height: "200px",
-              background: "#3a3a3a",
-              borderRadius: "50%",
-              flexShrink: 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+        <div className="artist__header mb-60">
+          <div className="artist__avatar">
             <span className="pra">Artist Photo</span>
           </div>
           <div>
             <span className="fs-12 pra mb-8 d-block text-uppercase">
               Artist Profile
             </span>
-            <h1 className="white mb-12" style={{ textTransform: "capitalize" }}>
+            <h1 className="white mb-12 text-capitalize">
               {slug.replace(/-/g, " ")}
             </h1>
             <p className="pra fs-16 mb-16">
@@ -68,10 +47,7 @@ const ArtistPage = ({ params }: Props) => {
           <button className="cmn--btn">
             <span>Follow</span>
           </button>
-          <button
-            className="cmn--btn"
-            style={{ background: "transparent", border: "1px solid #555" }}
-          >
+          <button className="cmn--btn btn--outline">
             <span>Share</span>
           </button>
         </div>
@@ -80,39 +56,17 @@ const ArtistPage = ({ params }: Props) => {
         <div className="header__text mb-24">
           <h4 className="white">Popular Tracks</h4>
         </div>
-        <div
-          className="tracks__list mb-60"
-          style={{
-            background: "#1e1e1e",
-            borderRadius: "12px",
-            overflow: "hidden",
-          }}
-        >
+        <div className="tracks__list mb-60">
           {[1, 2, 3, 4, 5].map((item) => (
             <div
               key={item}
               className="track__row d-flex align-items-center justify-content-between"
-              style={{
-                padding: "16px 20px",
-                borderBottom: item < 5 ? "1px solid #2a2a2a" : "none",
-                cursor: "pointer",
-              }}
             >
               <div className="d-flex align-items-center gap-3">
-                <span className="pra fs-14" style={{ width: "20px" }}>
+                <span className="pra fs-14 track__number">
                   {item}
                 </span>
-                <div
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    background: "#2a2a2a",
-                    borderRadius: "4px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
+                <div className="track__artwork">
                   <span className="pra fs-12">Art</span>
                 </div>
                 <div>
@@ -122,13 +76,7 @@ const ArtistPage = ({ params }: Props) => {
               </div>
               <div className="d-flex align-items-center gap-4">
                 <span className="pra fs-14">45.2K plays</span>
-                <button
-                  style={{
-                    background: "transparent",
-                    border: "none",
-                    cursor: "pointer",
-                  }}
-                >
+                <button className="btn--transparent">
                   <span className="pra">▶</span>
                 </button>
               </div>
@@ -140,14 +88,8 @@ const ArtistPage = ({ params }: Props) => {
         <div className="header__text mb-24">
           <h4 className="white">About</h4>
         </div>
-        <div
-          style={{
-            background: "#1e1e1e",
-            borderRadius: "12px",
-            padding: "24px",
-          }}
-        >
-          <p className="pra fs-16" style={{ lineHeight: "1.8" }}>
+        <div className="about__section">
+          <p className="pra fs-16 line-height-relaxed">
             Full artist biography and background information will be displayed
             here. This content will come from the artist&apos;s profile in the
             database. Artists will be able to edit this section from their

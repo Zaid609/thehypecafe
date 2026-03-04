@@ -14,7 +14,7 @@ const SponsorPage = () => {
         {/* Hero */}
         <div className="text-center mb-60">
           <h1 className="white mb-16">Partner With The Hype Cave</h1>
-          <p className="pra fs-18" style={{ maxWidth: "600px", margin: "0 auto" }}>
+          <p className="pra fs-18 text-center-max-600">
             Reach engaged audiences through podcast sponsorships, banner
             placements, and sponsored segments
           </p>
@@ -24,19 +24,12 @@ const SponsorPage = () => {
         <div className="row g-4 mb-60">
           {[
             { label: "Monthly Listeners", value: "50K+" },
-            { label: "Episodes Released", value: "200+" },
+            { label: "Episodes Released", value: "5+" },
             { label: "Social Following", value: "25K+" },
             { label: "Avg. Episode Length", value: "45 min" },
           ].map((stat, index) => (
             <div key={index} className="col-lg-3 col-md-6">
-              <div
-                className="stat__card text-center"
-                style={{
-                  background: "#1e1e1e",
-                  borderRadius: "12px",
-                  padding: "30px 20px",
-                }}
-              >
+              <div className="stat__card text-center">
                 <h2 className="white mb-8">{stat.value}</h2>
                 <p className="pra fs-14">{stat.label}</p>
               </div>
@@ -84,24 +77,10 @@ const SponsorPage = () => {
           ].map((tier, index) => (
             <div key={index} className="col-lg-4">
               <div
-                className="tier__card"
-                style={{
-                  background: tier.featured ? "#004C54" : "#1e1e1e",
-                  borderRadius: "16px",
-                  padding: "30px",
-                  height: "100%",
-                  border: tier.featured ? "2px solid #006d75" : "none",
-                }}
+                className={`tier__card ${tier.featured ? "tier__card--featured" : ""}`}
               >
                 {tier.featured && (
-                  <span
-                    className="d-block mb-16 fs-12"
-                    style={{
-                      color: "#90EE90",
-                      textTransform: "uppercase",
-                      fontWeight: 600,
-                    }}
-                  >
+                  <span className="d-block mb-16 fs-12 tier__badge">
                     Most Popular
                   </span>
                 )}
@@ -110,24 +89,19 @@ const SponsorPage = () => {
                   <span className="white fs-24 fw-600">{tier.price}</span>
                   <span className="pra fs-14"> / month</span>
                 </div>
-                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px" }}>
+                <ul className="tier__features">
                   {tier.features.map((feature, fIndex) => (
                     <li
                       key={fIndex}
                       className="d-flex align-items-start gap-2 mb-12"
                     >
-                      <span style={{ color: "#90EE90" }}>✓</span>
+                      <span className="tier__check">✓</span>
                       <span className="white fs-14">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <button
-                  className="cmn--btn w-100"
-                  style={{
-                    background: tier.featured ? "#fff" : "transparent",
-                    color: tier.featured ? "#004C54" : "#fff",
-                    border: tier.featured ? "none" : "1px solid #555",
-                  }}
+                  className={`cmn--btn w-100 ${tier.featured ? "btn--tier-featured" : "btn--tier-default"}`}
                 >
                   <span>Get Started</span>
                 </button>
@@ -137,58 +111,28 @@ const SponsorPage = () => {
         </div>
 
         {/* Contact Form */}
-        <div
-          style={{
-            background: "#1e1e1e",
-            borderRadius: "16px",
-            padding: "40px",
-            maxWidth: "600px",
-            margin: "0 auto",
-          }}
-        >
+        <div className="contact__form-container">
           <h4 className="white mb-24 text-center">Request Media Kit</h4>
           <form>
             <div className="mb-16">
               <input
                 type="text"
                 placeholder="Company Name"
-                className="w-100"
-                style={{
-                  background: "#2a2a2a",
-                  border: "none",
-                  borderRadius: "8px",
-                  padding: "14px 16px",
-                  color: "#fff",
-                }}
+                className="w-100 form__input"
               />
             </div>
             <div className="mb-16">
               <input
                 type="email"
                 placeholder="Email Address"
-                className="w-100"
-                style={{
-                  background: "#2a2a2a",
-                  border: "none",
-                  borderRadius: "8px",
-                  padding: "14px 16px",
-                  color: "#fff",
-                }}
+                className="w-100 form__input"
               />
             </div>
             <div className="mb-24">
               <textarea
                 placeholder="Tell us about your brand and goals"
                 rows={4}
-                className="w-100"
-                style={{
-                  background: "#2a2a2a",
-                  border: "none",
-                  borderRadius: "8px",
-                  padding: "14px 16px",
-                  color: "#fff",
-                  resize: "vertical",
-                }}
+                className="w-100 form__textarea"
               />
             </div>
             <button type="submit" className="cmn--btn w-100">

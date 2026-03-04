@@ -46,8 +46,7 @@ const Banner = () => {
                       transport us to different times and places
                     </p>
                     <div className="banner__btn ps-1 d-flex align-items-center">
-                      <Link href="signin" className="cmn--btn">
-                        <span>Buy Now</span>
+                      <Link href="watch" className="cmn--btn"><span>Watch Now</span>
                       </Link>
                       <Link href="trending" className="cmn--btn cmn--btntwo">
                         <span>Explore</span>
@@ -66,8 +65,7 @@ const Banner = () => {
                       transport us to different times and places
                     </p>
                     <div className="banner__btn ps-1 d-flex align-items-center">
-                      <Link href="signin" className="cmn--btn">
-                        <span>Buy Now</span>
+                      <Link href="watch" className="cmn--btn"><span>Watch Now</span>
                       </Link>
                       <Link href="trending" className="cmn--btn cmn--btntwo">
                         <span>Explore</span>
@@ -86,8 +84,7 @@ const Banner = () => {
                       transport us to different times and places
                     </p>
                     <div className="banner__btn ps-1 d-flex align-items-center">
-                      <Link href="signin" className="cmn--btn">
-                        <span>Buy Now</span>
+                      <Link href="watch" className="cmn--btn"><span>Watch Now</span>
                       </Link>
                       <Link href="trending" className="cmn--btn cmn--btntwo">
                         <span>Explore</span>
@@ -106,8 +103,7 @@ const Banner = () => {
                       transport us to different times and places
                     </p>
                     <div className="banner__btn ps-1 d-flex align-items-center">
-                      <Link href="signin" className="cmn--btn">
-                        <span>Buy Now</span>
+                      <Link href="watch" className="cmn--btn"><span>Watch Now</span>
                       </Link>
                       <Link href="trending" className="cmn--btn cmn--btntwo">
                         <span>Explore</span>

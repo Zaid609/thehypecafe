@@ -1,18 +1,14 @@
+"use client";
+
+import AuthGuard from "@/components/shared/AuthGuard";
 import ProfileSection from "@/components/pages/profile/ProfileSection";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title:
-    "Profile - The Hype Cave - Music & Podcast Streaming",
-  description: "The Hype Cave - Music & Podcast Streaming",
-};
-
-const profile = () => {
+const Profile = () => {
   return (
-    <>
+    <AuthGuard requireAuth requireOnboarding>
       <ProfileSection />
-    </>
+    </AuthGuard>
   );
 };
 
-export default profile;
+export default Profile;

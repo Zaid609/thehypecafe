@@ -301,18 +301,6 @@ const Navbar = () => {
                               </span>
                             </Link>
                           </li>
-                          <li className="mb-16">
-                            <Link
-                              href="#"
-                              className="link d-flex align-items-center gap-2 dropdown-item"
-                            >
-                              <i className="bi bi-bell fs-20"></i>
-                              <span className="d-block fs-16 pra fw-500 ">
-                                {" "}
-                                Theme{" "}
-                              </span>
-                            </Link>
-                          </li>
                         </ul>
                         <ul className="list">
                           <li className="mb-16">

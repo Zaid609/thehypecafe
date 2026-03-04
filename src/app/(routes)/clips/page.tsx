@@ -20,42 +20,14 @@ const ClipsPage = () => {
         <div className="row g-4">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
             <div key={item} className="col-xl-4 col-lg-4 col-md-6">
-              <div
-                className="clip__card"
-                style={{
-                  background: "#1e1e1e",
-                  borderRadius: "12px",
-                  overflow: "hidden",
-                  cursor: "pointer",
-                  transition: "transform 0.2s ease",
-                }}
-              >
-                <div
-                  style={{
-                    background: "#2a2a2a",
-                    height: "200px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    position: "relative",
-                  }}
-                >
+              <div className="clip__card">
+                <div className="clip__card-thumbnail">
                   <span className="pra">Clip {item}</span>
-                  <div
-                    style={{
-                      position: "absolute",
-                      bottom: "10px",
-                      right: "10px",
-                      background: "rgba(0,0,0,0.8)",
-                      padding: "4px 8px",
-                      borderRadius: "4px",
-                      fontSize: "12px",
-                    }}
-                  >
+                  <div className="clip__card-duration">
                     <span className="white">1:30</span>
                   </div>
                 </div>
-                <div style={{ padding: "16px" }}>
+                <div className="clip__card-content">
                   <h6 className="white mb-8">Clip Title {item}</h6>
                   <p className="pra fs-14">12K views • 2 days ago</p>
                 </div>
