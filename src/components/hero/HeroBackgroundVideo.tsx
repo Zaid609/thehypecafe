@@ -19,8 +19,8 @@ interface HeroBackgroundVideoProps {
  * - Responsive heights
  */
 const HeroBackgroundVideo = ({
-  videoSrc = "/hero/hero-bg.mp4",
-  posterSrc = "/hero/hero-bg.jpg",
+  videoSrc = "/media/videos/hero/hypecave-bg.mp4",
+  posterSrc = "/img/bn/banner-two-bg.jpg",
   overlayOpacity = 0.55,
   children,
 }: HeroBackgroundVideoProps) => {

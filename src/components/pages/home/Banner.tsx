@@ -1,5 +1,4 @@
 "use client";
-import HeroBackgroundVideo from "@/components/hero/HeroBackgroundVideo";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,13 +8,20 @@ import { FreeMode, Navigation, Thumbs } from "swiper";
 import "swiper/css/thumbs";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+// Video sources for each slide - replace with your actual videos
+const slideVideos = [
+  "/media/videos/hero/hypecave-bg.mp4",
+  "/media/videos/hero/hypecave-bg.mp4",
+  "/media/videos/hero/hypecave-bg.mp4",
+  "/media/videos/hero/hypecave-bg.mp4",
+];
+
 const Banner = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
     // <!--banner section-->
-    <HeroBackgroundVideo>
-      <section className="banner__v1 banner__space mr-24 ml-24 banner--video-mode">
+    <section className="banner__v1 banner__space mr-24 ml-24">
       <div className="container-fluid p-0">
         <div className="row g-4">
           <div className="col-lg-7">
@@ -37,7 +43,18 @@ const Banner = () => {
                 }}
                 className="swiper-wrapper"
               >
-                <SwiperSlide className="banner__slide swiper-slide d-flex align-items-center bn__thumb1">
+                <SwiperSlide className="banner__slide swiper-slide d-flex align-items-center banner__slide--video">
+                  <video
+                    className="slide-video-bg"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source src={slideVideos[0]} type="video/mp4" />
+                  </video>
+                  <div className="slide-video-overlay"></div>
                   <div className="banner__content">
                     <h1 className="mb-24">
                       The Hype Cave Where Music Comes to Life
@@ -56,7 +73,18 @@ const Banner = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-                <SwiperSlide className="banner__slide swiper-slide d-flex align-items-center bn__thumb2">
+                <SwiperSlide className="banner__slide swiper-slide d-flex align-items-center banner__slide--video">
+                  <video
+                    className="slide-video-bg"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source src={slideVideos[1]} type="video/mp4" />
+                  </video>
+                  <div className="slide-video-overlay"></div>
                   <div className="banner__content">
                     <h1 className="mb-24">
                       The Hype Cave Where Music Comes to Life
@@ -75,7 +103,18 @@ const Banner = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-                <SwiperSlide className="banner__slide swiper-slide d-flex align-items-center bn__thumb3">
+                <SwiperSlide className="banner__slide swiper-slide d-flex align-items-center banner__slide--video">
+                  <video
+                    className="slide-video-bg"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source src={slideVideos[2]} type="video/mp4" />
+                  </video>
+                  <div className="slide-video-overlay"></div>
                   <div className="banner__content">
                     <h1 className="mb-24">
                       The Hype Cave Where Music Comes to Life
@@ -94,7 +133,18 @@ const Banner = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-                <SwiperSlide className="banner__slide swiper-slide d-flex align-items-center bn__thumb4">
+                <SwiperSlide className="banner__slide swiper-slide d-flex align-items-center banner__slide--video">
+                  <video
+                    className="slide-video-bg"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source src={slideVideos[3]} type="video/mp4" />
+                  </video>
+                  <div className="slide-video-overlay"></div>
                   <div className="banner__content">
                     <h1 className="mb-24">
                       The Hype Cave Where Music Comes to Life
@@ -175,7 +225,6 @@ const Banner = () => {
         </div>
       </div>
     </section>
-    </HeroBackgroundVideo>
     //<!--banner section-->
   );
 };
