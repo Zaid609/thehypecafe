@@ -25,11 +25,62 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 8px;
+  }
+  @include breakpoint(max-lg) {
+    height: 400px;
+  }
+  @include breakpoint(max-md) {
+    height: 350px;
   }
   @include breakpoint(max-sm) {
     height: 300px;
   }
 }
+
+// Sponsor ad wrapper with badge
+.sponsor-ad-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.sponsor-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  background: linear-gradient(135deg, #f5a623 0%, #f59823 100%);
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  
+  @include breakpoint(max-md) {
+    font-size: 11px;
+    padding: 5px 12px;
+    top: 10px;
+    left: 10px;
+  }
+  
+  @include breakpoint(max-sm) {
+    font-size: 10px;
+    padding: 4px 10px;
+    top: 8px;
+    left: 8px;
+  }
+}
+
 .mySwiper22 {
   position: relative;
 }
@@ -58,11 +109,14 @@
   @include breakpoint(max-xxl) {
     padding: 90px 40px 120px;
   }
-  @include breakpoint(max-sm) {
-    padding: 90px 14px 100px;
+  @include breakpoint(max-lg) {
+    padding: 70px 30px 90px;
+  }
+  @include breakpoint(max-md) {
+    padding: 60px 24px 80px;
   }
   @include breakpoint(max-sm) {
-    padding: 80px 14px 100px;
+    padding: 50px 14px 70px;
   }
 }
 .banner__thumbside {
@@ -91,9 +145,25 @@
   .banner__btn {
     gap: 10px;
   }
+  @include breakpoint(max-lg) {
+    max-width: 100%;
+    h1 {
+      font-size: 32px;
+      line-height: 1.3;
+    }
+  }
+  @include breakpoint(max-md) {
+    h1 {
+      font-size: 28px;
+      line-height: 1.3;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
   @include breakpoint(max-xs) {
     h1 {
-      font-size: 29px;
+      font-size: 24px;
       line-height: 1.4;
     }
   }

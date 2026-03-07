@@ -2,9 +2,8 @@
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 //@ts-ignore
-import { FreeMode, Navigation, Thumbs } from "swiper";
+import { Navigation } from "swiper";
 import "swiper/css/thumbs";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -17,29 +16,20 @@ const slideVideos = [
 ];
 
 const Banner = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
   return (
     // <!--banner section-->
     <section className="banner__v1 banner__space mr-24 ml-24">
       <div className="container-fluid p-0">
         <div className="row g-4">
-          <div className="col-lg-7">
+          <div className="col-lg-7 col-md-7">
             <div className="swiper mySwiper22">
               <Swiper
-                modules={[Thumbs, Navigation]}
+                modules={[Navigation]}
                 loop={true}
                 spaceBetween={10}
                 navigation={{
                   nextEl: ".swiper-button-next",
                   prevEl: ".swiper-button-prev",
-                }}
-                thumbs={{
-                  swiper:
-                    //@ts-ignore
-                    thumbsSwiper && !thumbsSwiper.destroyed
-                      ? thumbsSwiper
-                      : null,
                 }}
                 className="swiper-wrapper"
               >
@@ -174,53 +164,21 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-5">
-            <div className="swiper mySwiper1">
-              <Swiper
-                //@ts-ignore
-                onSwiper={setThumbsSwiper}
-                modules={[FreeMode]}
-                loop={true}
-                spaceBetween={10}
-                slidesPerView={1}
-                freeMode={true}
-                watchSlidesProgress={true}
-                className="swiper-wrapper"
-              >
-                <SwiperSlide className="swiper-slide side__thumbs__custom">
-                  <Image
-                    width={700}
-                    height={520}
-                    src="/img/bn/side2.jpg"
-                    alt="img"
-                  />
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide side__thumbs__custom">
-                  <Image
-                    width={700}
-                    height={520}
-                    src="/img/bn/side3.jpg"
-                    alt="img"
-                  />
-                </SwiperSlide>
-                <SwiperSlide className="swiper-slide side__thumbs__custom">
-                  <Image
-                    width={700}
-                    height={520}
-                    src="/img/bn/side4.jpg"
-                    alt="img"
-                  />
-                </SwiperSlide>
-                <div className="swiper-slide side__thumbs__custom">
-                  <Image
-                    width={700}
-                    height={520}
-                    src="/img/bn/side1.jpg"
-                    alt="img"
-                  />
-                </div>
-              </Swiper>
-            </div>
+          <div className="col-lg-5 col-md-5">
+            <a 
+              href="https://underthesunrs.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="side__thumbs__custom d-block sponsor-ad-wrapper"
+            >
+              <span className="sponsor-badge">Sponsored</span>
+              <Image
+                width={700}
+                height={520}
+                src="/media/images/sponsors/under-the-sun-roofing.jpg"
+                alt="Under The Sun Roofing & Solar - Sponsor"
+              />
+            </a>
           </div>
         </div>
       </div>

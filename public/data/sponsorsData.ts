@@ -6,8 +6,9 @@ export interface Sponsor {
   companyName: string;
   logo: string;
   website: string;
-  tier: "product" | "segment" | "title";
+  tier: "product" | "segment" | "title" | "featured";
   isActive: boolean;
+  description?: string;
 }
 
 export interface EpisodeSponsor {
@@ -17,18 +18,23 @@ export interface EpisodeSponsor {
   productPartner?: Sponsor;
 }
 
+// Featured sponsors (displayed on homepage)
+export const featuredSponsors: Sponsor[] = [
+  {
+    id: "sponsor-uts",
+    companyName: "Under The Sun Roofing & Solar",
+    logo: "/media/images/sponsors/under-the-sun-roofing.jpg",
+    website: "https://underthesunrs.com",
+    tier: "featured",
+    isActive: true,
+    description: "Quality roofing and solar solutions for your home",
+  },
+];
+
 // Demo sponsors (will be replaced with real data)
 export const sponsors: Sponsor[] = [
-  // Add sponsors here when they sign up
-  // Example:
-  // {
-  //   id: "sponsor-1",
-  //   companyName: "Example Brand",
-  //   logo: "/images/sponsors/example-brand.png",
-  //   website: "https://example.com",
-  //   tier: "title",
-  //   isActive: true,
-  // },
+  ...featuredSponsors,
+  // Add more sponsors here when they sign up
 ];
 
 // Episode sponsor assignments
